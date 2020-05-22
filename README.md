@@ -10,7 +10,7 @@ summer 2020 ARC simulations for nvidia's isaac_sdk
 
 ### [Isaac SDK 2019.3](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
 
-- the cuda package's verison has to be specifically [], running `sudo apt update && upgrade` on your packages will upgrade that and throw error. #todo insert version type
+- the cuda package's version has to be specifically 10.0, running `sudo apt update && upgrade` on your packages will upgrade that and throw error.
 
 
 ### [Simulation Environment: Isaac Sim Unity 3D](https://docs.nvidia.com/isaac/isaac/doc/simulation/unity3d.html#isaacsim-unity3d)
