@@ -1,7 +1,26 @@
 some pointers from the tutorials we're doing.
-[developing codelets in C++](https://docs.nvidia.com/isaac/isaac/doc/tutorials/ping.html)
 
-# Codelet
+# [Tutorial 2: Isaac Robotics Engine Basics](https://docs.nvidia.com/isaac/isaac/doc/engine/alice.html#basics)
+
+focus: overall terminology and overall structure of Isaac Apps
+
+* The JSON is the isaac application, it has 4 sections to it: 
+	* name 
+	* modules: basically what modules to include/import (the sdk itself has a lot)
+	* graph with nodes and edges
+	* config: to tune parameters depending on use cases e.g. setting the tickingfrequency
+
+
+* along w the isaac application, we need a makefile, it's the `BUILD` file that we write.
+
+## [Codelets: the building blocks of our robotics applications](https://docs.nvidia.com/isaac/isaac/doc/engine/components.html#understanding-codelets)
+
+
+
+
+# Tutorial1: Ping Pong [ codelets in C++](https://docs.nvidia.com/isaac/isaac/doc/tutorials/ping.html)
+
+## Codelet
 
 - must have 3 main files:  a BUILD file, a json file, and c++ files(a header (hpp) and a .cpp file)
 - each isaac application has many nodes and edges
