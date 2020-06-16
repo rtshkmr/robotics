@@ -49,7 +49,7 @@ sudo apt-get install nvidia-driver-440
 bob@desktop:~/isaac$ engine/build/scripts/install_dependencies.sh
 ```
 
-### [Simulation Environment: UnityHub and Unity 3D]()
+### Simulation Environment: UnityHub and Unity 3D
 1. Download [UnityHub AppImage](https://unity3d.com/get-unity/download)
 2. Give the AppImage executable permissions. In terminal, navigate to the folder containing UnityHub.AppImage and run the following command.
 ```
