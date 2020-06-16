@@ -1,10 +1,12 @@
 last updated Tue Jun 16 11:42:36 +08 2020
-- [robotics](#robotics)
+
+# Simulation for Robotics
+summer 2020 ARC simulations for nvidia's isaac_sdk. This document serves as a basic installation/quickstart guide.
+The relevant commands have been extracted out, please follow the links provided for further reading if required.
+
+- [Simulation for Robotics](#simulation-for-robotics)
+  - [Motivation](#motivation)
   - [A: Basic Installations and Account Setup](#a-basic-installations-and-account-setup)
-    - [System Requirements](#system-requirements)
-    - [[Nvidia Dev Account]](#nvidia-dev-account)
-    - [Isaac SDK](#isaac-sdk)
-    - [Simulation Environment: UnityHub and Unity 3D](#simulation-environment-unityhub-and-unity-3d)
     - [Troubleshooting Tips/Hacks](#troubleshooting-tipshacks)
   - [B: Testing Your Setup](#b-testing-your-setup)
   - [C: Basic Workflow](#c-basic-workflow)
@@ -25,20 +27,19 @@ last updated Tue Jun 16 11:42:36 +08 2020
   - [G: Todos](#g-todos)
 
 
-# robotics
-summer 2020 ARC simulations for nvidia's isaac_sdk. This document serves as a basic installation/quickstart guide.
+
+## Motivation
+
+The training of models benefits from simulations. We are able to generate unlimited data for the training of these models,
+and have them all labelled in detail. Furthermore, we are able to randomise the light, materials, textures and colour of
+our simulated objects. These should allow us to train and test our robots in a safe and controlled environment.
+
 
 ## A: Basic Installations and Account Setup
 
-- most of the links below are self explanatory, relevant caveats will be indicated 
-  
-### System Requirements
+First, set up an [NVIDIA dev account](https://developer.nvidia.com/developer-program) and from the [downloads](https://developer.nvidia.com/isaac/downloads), IsaacSDK 2020.1 and Isaac Sim (for Navigation) 2020.1. 
 
-### [Nvidia Dev Account]
-
-### [Isaac SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
-
-### [Simulation Environment: UnityHub and Unity 3D]()
+The SDK includes various apps while the Sim has Unity3D plugins and assets within it that are relevant to our simulations (e.g. Carter robot).
 
 
 ### Troubleshooting Tips/Hacks
