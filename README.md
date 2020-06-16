@@ -33,13 +33,37 @@ summer 2020 ARC simulations for nvidia's isaac_sdk. This document serves as a ba
 - most of the links below are self explanatory, relevant caveats will be indicated 
   
 ### System Requirements
+Ubuntu 18.04 LTS
+GPU with [compute capability](https://developer.nvidia.com/cuda-gpus) of 3.5 or higher
 
-### [Nvidia Dev Account]
-
-### [Isaac SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
+### [Isaac & Isaac Sim SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
+1. [Download](https://developer.nvidia.com/isaac/downloads) Isaac SDK 2020.1 and Isaac Sim (for Navigation) 2020.1, then extract the files to your home folder. (~/isaac and ~/isaac_sim_unity3d respectively)
+2. Ensure current version of NVIDIA GPU driver is version 440. To install, run the following commands in terminal
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get install nvidia-driver-440
+```
+3. From the root folder of Isaac SDK, run the dependency script. This will install the required dependecies
+```
+bob@desktop:~/isaac$ engine/build/scripts/install_dependencies.sh
+```
 
 ### [Simulation Environment: UnityHub and Unity 3D]()
-
+1. Download [UnityHub AppImage](https://unity3d.com/get-unity/download)
+2. Give the AppImage executable permissions. In terminal, navigate to the folder containing UnityHub.AppImage and run the following command.
+```
+chmod +x UnityHub.AppImage
+```
+3. To open UnityHub, run the executable in terminal
+```
+./UnityHub.AppImage
+```
+4. Sign in to Unity Hub and activate personal or pro licence. Pro licence is available as part of the [github student developer pack](https://education.github.com/pack)
+5. Run the following command in terminal to install Unity 2019.3.0f6 (no additional modules required).
+```
+./UnityHub.AppImage unityhub://2019.3.0f6/27ab2135bccf
+```
 
 ### Troubleshooting Tips/Hacks
 - the cuda package's version has to be specifically 10.0, running `sudo apt update && upgrade` on your packages will upgrade that and throw error.
