@@ -19,14 +19,13 @@ The relevant commands have been extracted out, please follow the links provided 
     - [Setting up Virtual Gamepad](#setting-up-virtual-gamepad)
     - [Segmentation Training](#segmentation-training)
   - [E: Collaboration Tools](#e-collaboration-tools)
-    - [Unity's Collab Features](#unitys-collab-features)
+    - [Unity's Collaboration  Features](#unitys-collaboration-features)
     - [Making/Modifying Assets](#makingmodifying-assets)
       - [Sources For Assets](#sources-for-assets)
       - [MapsSDK](#mapssdk)
       - [EasyRoads3D](#easyroads3d)
       - [other smol stuff](#other-smol-stuff)
-  - [F: Changelog](#f-changelog)
-  - [G: Todos](#g-todos)
+  - [F: Todos](#f-todos)
 
 
 
@@ -41,25 +40,28 @@ our simulated objects. These should allow us to train and test our robots in a s
 * GPU with [compute capability](https://developer.nvidia.com/cuda-gpus) of 3.5 or higher
 
 ### [Isaac & Isaac Sim SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
-1. [Download](https://developer.nvidia.com/isaac/downloads) Isaac SDK 2020.1 and Isaac Sim (for Navigation) 2020.1, then extract the files to your home folder. (~/isaac and ~/isaac_sim_unity3d respectively)
+1. [Download](https://developer.nvidia.com/isaac/downloads) Isaac SDK 2020.1 and Isaac Sim (for Navigation) 2020.1, then extract the files to your home folder. (name them `~/isaac` and `~/isaac_sim_unity3d` respectively)
 2. Ensure current version of NVIDIA GPU driver is version 440. To install, run the following commands in terminal
-```
+
+```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get update
 sudo apt-get install nvidia-driver-440
 ```
 3. From the root folder of Isaac SDK, run the dependency script. This will install the required dependecies
-```
+
+``` bash
 bob@desktop:~/isaac$ engine/build/scripts/install_dependencies.sh
 ```
 
 ### Simulation Environment: UnityHub and Unity 3D
 1. Download [UnityHub AppImage](https://unity3d.com/get-unity/download)
 2. Give the AppImage executable permissions. In terminal, navigate to the folder containing UnityHub.AppImage and run the following command.
-```
+   
+``` 
 chmod +x UnityHub.AppImage
 ```
-3. To open UnityHub, run the executable in terminal
+1. To open UnityHub, run the executable in terminal
 ```
 ./UnityHub.AppImage
 ```
@@ -100,11 +102,27 @@ cat /usr/local/cuda/version.txt
 
 ## E: Collaboration Tools 
 
-### Unity's Collab Features
+### Unity's Collaboration  Features
+
+Unity Collab is Unity's own version control service. It's convenient to use and a setup for it is [described here](https://docs.unity3d.com/Manual/UnityCollaborateSettingUp.html).
+It allows the syncing of 3D assets and other changes to the scenes. ***Note:*** only 3 people may use collab under the free service. 
+
+Other version control systems are supported, including git, and using git would be beneficial.
+[StackOverflow thread](https://stackoverflow.com/questions/18225126/how-to-use-git-for-unity3d-source-control) on git-Unity3D best practices.
+
+**Suggestion:** consider dividing the asset-making todos and sync them using a github repo, while 3 people sync amongst each other on the Unity3D scenes
 
 ### Making/Modifying Assets 
 
+Based on the supported [file types](https://docs.unity3d.com/Manual/3D-formats.html) for Unity3D, we have used `.fbx` files to create and import assets.
+
+Blender is useful for this, but there's a learning curve. [Official Blender Fundamentals Playlist](https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6)
+
+![this primitive donut took 2h](./assets/donut.png)
+*this donut took 2h*
+
 #### Sources For Assets
+Honestly, there's nothing good that's freely (and legally) available. Check out the assets subdir in this repo for some assets, add to it if you can.
 
 #### MapsSDK
 
@@ -112,9 +130,7 @@ cat /usr/local/cuda/version.txt
 
 #### other smol stuff
 
-## F: Changelog
-
-## G: Todos
+## F: Todos
 
 * [Establishing a ROS Bridge](https://docs.nvidia.com/isaac/isaac/packages/ros_bridge/doc/ros_bridge.html)
 
