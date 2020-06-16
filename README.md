@@ -66,7 +66,15 @@ chmod +x UnityHub.AppImage
 ```
 
 ### Troubleshooting Tips/Hacks
-- the cuda package's version has to be specifically 10.0, running `sudo apt update && upgrade` on your packages will upgrade that and throw error.
+- Unable to build isaac app
+  - Bazel version has to be 2.x. To check, run the following command in terminal. Running the dependency script again should fix this.
+  ```
+  bazel --version
+  ```
+- Cuda package's version has to be specifically 10.0, be careful when running `sudo apt update && upgrade` on your packages as this may upgrade cuda to a newer version. To check current version of Cuda, run the following command in terminal
+```
+cat /usr/local/cuda/version.txt
+```
 
 - have to install Unity Hub for unity projects management.
 
