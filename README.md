@@ -77,12 +77,31 @@ chmod +x UnityHub.AppImage
   ```
   bazel --version
   ```
-- Cuda package's version has to be specifically 10.0, be careful when running `sudo apt update && upgrade` on your packages as this may upgrade cuda to a newer version. To check current version of Cuda, run the following command in terminal
-```
-cat /usr/local/cuda/version.txt
-```
+- Unable to run NavSim
+  - Cuda package's version has to be specifically 10.0, be careful when running `sudo apt update && upgrade` on your packages as this may upgrade cuda to a newer version. To check current version of Cuda, run the following command in terminal
+  ``
+  cat /usr/local/cuda/version.txt
+  ``
 
-- have to install Unity Hub for unity projects management.
+- Unity unable to start
+  - You may be missing a dependency. ``sudo apt install libgconf-2-4``
+
+- Unable to import Sample Project into Unity
+  -Follow the instructions [here](https://forums.developer.nvidia.com/t/isaac-sim-2020-1-unity-3d-unable-to-open-sample-project/126047). Delete the 4 files mentioned.
+
+- Nvidia graphics driver installation failed.
+  - You might have an older version of the driver. Remove old nvidia driver and try again
+
+Others
+- Ensure correct version of dependencies Bazel 2.x, CUDA 10.0, CUDNN 7.6.3, and TensorRT 6.0
+
+- Substance plugin missing
+  - Ensure ``Allogerithmic`` folder is present in your assets file. If missing, copy it from ``isaac_sim_unity3d/projects/sample/Assets``.
+  
+ - Logfile not printing to terminal, error message ``CreateDirectory '' failed:  (current dir: )`` shown.
+  - modify the -logfile flag to ``-logfile /dev/stdout``
+  
+ - Visit [Isaac 2020.1 FAQ](https://docs.nvidia.com/isaac/isaac/doc/faq.html) and [Isaac SDK forum](https://forums.developer.nvidia.com/c/agx-autonomous-machines/isaac/sdk/68) for help :)
 
 ## B: Testing Your Setup
 
