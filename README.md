@@ -4,6 +4,8 @@ last updated Tue Jun 16 11:42:36 +08 2020
 summer 2020 ARC simulations for nvidia's isaac_sdk. This document serves as a basic installation/quickstart guide.
 The relevant commands have been extracted out, please follow the links provided for further reading if required.
 
+![laikago](./assets/screenshots/lol.jpg)
+
 - [Simulation for Robotics](#simulation-for-robotics)
   - [Motivation](#motivation)
     - [System Requirements](#system-requirements)
@@ -43,6 +45,7 @@ our simulated objects. These should allow us to train and test our robots in a s
 ***Software Versions***:
 the following are versions that we have tested with successfully: 
 
+todo
 * UnityEditor Version: 
 * Isaac SDK:
 * Bazel Version:
@@ -182,7 +185,75 @@ Scenes vs Scenarios: TODO
 
 ### IsaacSight Related
 
-### Setting up Virtual Gamepad
+### [Setting up Virtual Gamepad](https://docs.nvidia.com/isaac/isaac/packages/navigation/doc/virtual-gamepad.html#virtual-gamepad) - Controlling Carter using
+
+We want to control our Robot's movements when a scene is playing. This involves modifying the application (e.g. `navsim` app that we will be running) such that the virtual gamepad widget on IsaacSight(the front end) may connect to our app (the backend). In short, this involves modifying the app codelet by first, adding the nodes, edges and config params to the json file that represents the app, followed by modifying the BUILD file by adding the "navigation" module.
+
+the files are at this dir: `~/isaac/apps/navsim/`
+
+We achieve this like so:
+
+**1. to the json file** (`navsim_navigate.app.json`)
+  * add this node: 
+  ```json
+  {
+    "name": "virtual_gamepad_bridge",
+    "components": [
+      {
+        "name": "message_ledger",
+        "type": "isaac::alice::MessageLedger"
+      },
+      {
+        "name": "VirtualGamepadBridge",
+        "type": "isaac::navigation::VirtualGamepadBridge"
+      }
+    ]
+  }
+  ```
+
+  * add this to the config section, including the param for `tick_period`:
+
+  ```json
+  "virtual_gamepad_bridge": {
+    "VirtualGamepadBridge": {
+      "tick_period": "100ms"
+    }
+  }
+  ```
+
+
+  * add the edges, these enable communication b/w the nodes:
+
+  ```json
+  {
+    "source": "websight/WebsightServer/virtual_gamepad",
+    "target": "virtual_gamepad_bridge/VirtualGamepadBridge/request"
+  },
+  {
+    "source": "virtual_gamepad_bridge/VirtualGamepadBridge/reply",
+    "target": "websight/WebsightServer/virtual_gamepad_reply"
+  }
+  ```   name = "...",
+    ...
+    modules = ["navigation"],
+)
+ 
+
+  * add the "navigation" module to the modules array
+  ```json
+  modules = ["navigation"]
+  ```
+
+**2. to the BUILD file**, add the "navigation" module into the modules array: 
+  ```json
+  isaac_app(
+      name = "...",
+      ...
+      modules = ["navigation"],
+  )
+  ```
+  
+Now, run your chosen scene and the chosen app, go to IsaacSight via your browser and access the Gamepad Widget. Connect to the app and you should be able to move Carter around within the scene!
 
 ### [Free Space Segmentation](https://docs.nvidia.com/isaac/isaac/packages/freespace_dnn/doc/freespace_segmentation.html)
 
@@ -250,6 +321,7 @@ Blender is useful for this, but there's a learning curve. [Official Blender Fund
 Honestly, there's nothing good that's freely (and legally) available. Check out the assets subdir in this repo for some assets, add to it if you can.
 
 #### MapsSDK
+
 
 #### EasyRoads3D
 EasyRoads3D is a plugin that provides an easy way to create roads in unity.
