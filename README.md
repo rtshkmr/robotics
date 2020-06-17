@@ -103,7 +103,7 @@ chmod +x UnityHub.AppImage
 - Nvidia graphics driver installation failed.
   - You might have an older version of the driver. Remove old nvidia driver and try again
 
-Others
+#### Others
 - Ensure correct version of dependencies Bazel 2.x, CUDA 10.0, CUDNN 7.6.3, and TensorRT 6.0
 
 - Substance plugin missing
@@ -184,7 +184,46 @@ Scenes vs Scenarios: TODO
 
 ### Setting up Virtual Gamepad
 
-### Segmentation Training
+### [Free Space Segmentation](https://docs.nvidia.com/isaac/isaac/packages/freespace_dnn/doc/freespace_segmentation.html)
+
+Isaac SDK includes the freespace_dnn package that makes it easy to train a free space DNN in simulation and subsequently use the model to run real world inference. 
+
+#### Training the model in simulation
+
+1. Launch tensorflow instance and train it with labelled images received over TCP
+  ``bob@desktop:~/isaac$ bazel run packages/freespace_dnn/apps:freespace_dnn_training``
+2. Run scenario 3 of medium warehouse scene by running the following command
+  ```bash
+  bob@desktop:~/isaac_sim_unity3d$ cd builds
+  bob@desktop:~/isaac_sim_unity3d/builds$ ./sample.x86_64 --scene medium_warehouse --scenario 3
+  ```
+3. Press "C" key to disable the main camera, increasing simulation framerate. Logs and checkpoints are saved in ``/tmp/path_segmentation`` by default
+4. To view training progress on Tensorboard ``tensorboard --logdir=/tmp/path_segmentation``
+5. Once the training is complete, serialize the most recent checkpoint as a protobuf file with ``bob@desktop:~/isaac$ python3 packages/freespace_dnn/apps/freespace_dnn_training_freeze_model.py --checkpoint_dir /tmp/path_segmentation --output_nodename prediction/truediv --output_filename model.pb --output_onnx_filename model.onnx``
+6. Using the model.onnx file that is generated, create a config file that looks like the packages/freespace_dnn/apps/freespace_dnn_inference_medium_warehouse_tensorrt.config.json file. You are now ready to perform inference.
+
+#### Inference
+
+freespace_dnn supports 4 different image sources.   
+
+| Application Name                | Image Source            |
+|---------------------------------|-------------------------|
+| freespace_dnn_inference_image   | Image on Disk           |
+| freespace_dnn_inference_replay  | Video on disk           |
+| freespace_dnn_inference_v4l2    | Camera                  |
+| freespace_dnn_inference_unity3d | Simulation with Unity3D |
+
+Example running with image on disk as image source
+1. ``bob@desktop:~/isaac$ bazel run packages/freespace_dnn/apps:freespace_dnn_inference_image -- --config inference:packages/freespace_dnn/apps/freespace_dnn_inference_medium_warehouse_tensorrt.config.json``
+2. Open Isaac Sight at [http://localhost:3000/](http://localhost:3000/).
+
+To change the image source, change ``color_filename`` parameter in ``freespace_dnn_inference_image.app.json``. To change
+the pre-trained model being used, modify the parameter after the config flag to point to a json file representing your model.
+
+To use the inference apps with a Unity scene, you have to additionally provide the config files that defines the camera teleportation parameters.
+```bash
+bob@desktop:~/isaac$ bazel run packages/freespace_dnn/apps/freespace_dnn_inference_unity3d -- --config inference:packages/freespace_dnn/apps/freespace_dnn_inference_medium_warehouse_tensorrt.config.json,packages/freespace_dnn/apps/freespace_dnn_inference_unity3d_medium_warehouse.config.json
+```
 
 ## E: Collaboration Tools 
 
@@ -213,6 +252,13 @@ Honestly, there's nothing good that's freely (and legally) available. Check out 
 #### MapsSDK
 
 #### EasyRoads3D
+EasyRoads3D is a plugin that provides an easy way to create roads in unity.
+
+1. Download and Import ``EasyRoads3D Free v3`` from the Unity Asset Store.
+2. Ensure you have a terrain game object. Else add a terrian game object ``GameObject -> 3D Object -> Terrain``
+3. Add the EasyRoads3D asset ``GameObject -> 3D Object -> EasyRoads3D -> New Road Network``
+4. Click on the Road Network Game Object created in the hierarchy. In the inspector on the right hand side, click the icon of road with a plus sign. Adjust parameters including road width and material.![](./readme_images/EasyRoads1.png)
+5. Click Add New Object. You can now shift-click on the terrain to add markers. ![](./readme_images/EasyRoads2.png)
 
 #### other smol stuff
 
