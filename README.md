@@ -29,15 +29,26 @@ The relevant commands have been extracted out, please follow the links provided 
 
 
 
-## Motivation
+### Motivation
 
 The training of models benefits from simulations. We are able to generate unlimited data for the training of these models,
 and have them all labelled in detail. Furthermore, we are able to randomise the light, materials, textures and colour of
 our simulated objects. These should allow us to train and test our robots in a safe and controlled environment.
   
-### System Requirements
+### System Requirements and Software Versions Tested
 * Ubuntu 18.04 LTS
 * GPU with [compute capability](https://developer.nvidia.com/cuda-gpus) of 3.5 or higher
+
+
+***Software Versions***:
+the following are versions that we have tested with successfully: 
+
+* UnityEditor Version: 
+* Isaac SDK:
+* Bazel Version:
+* Cuda:
+
+
 
 ### [Isaac & Isaac Sim SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
 1. [Download](https://developer.nvidia.com/isaac/downloads) Isaac SDK 2020.1 and Isaac Sim (for Navigation) 2020.1, then extract the files to your home folder. (name them `~/isaac` and `~/isaac_sim_unity3d` respectively)
@@ -105,11 +116,67 @@ Others
 
 ## B: Testing Your Setup
 
+Firstly get the dummy app built and running like so: 
+
+```bash
+bob@desktop:~/isaac$ bazel build //apps/samples/stereo_dummy # <--- builds the sample app (an app only needs to be built once)
+bob@desktop:~/isaac$ bazel run //apps/samples/stereo_dummy   # <--- runs the sample app
+```
+
+Following which, we should be able to view the app on IsaacSight, on your browser, go to `http://localhost:3000`
+
+If everything is working, we should see the map view widgets with a non-black screen:
+
+![testRun](./assets/screenshots/testRun.png)
+
+
+kill it from the terminal by doing a `Ctrl-C`
+
+
 ## C: Basic Workflow
 
 ### 1. Running Scenes in Play/Build Mode
 
+
+***Play Mode*** invovles the running of a executable that represents the scene. This executable is [generated upon building a scene](https://docs.nvidia.com/isaac/isaac/doc/simulation/unity3d.html#build). We can open up Unity3D in play mode like so: 
+
+```bash
+bob@desktop:~/isaac_sim_unity3d$ cd builds 
+bob@desktop:~/isaac_sim_unity3d/builds$ ./sample.x86_64 --scene small_warehouse -logFile /dev/stdout/ #indicating stdout allows us to view the debug info 
+```
+
+***Build Mode*** 
+
+```bash
+# e.g. of UnityEditorVersion: 2019.3.0f6
+bob@desktop:~$: Unity/Hub/Editor/<UnityEditorVersion>/Editor/Unity -projectPath isaac_sim_unity3d/projects/sample -logfile 
+```
+
 ### 2. Editing 3D Scenes in Unity Editor
+
+
+Our projects will be within the `isaac_sim_unity3d` dir.
+Nvidia-specific packages and assets (e.g. carter robot) can be copied over from sample scenes.
+
+```bash
+bob@desktop:~/isaac_sim_unity3d$ mkdir projects/test # creating a test project dir
+bob@desktop:~/isaac_sim_unity3d$ cp -r projects/sample/Assets projects/sample/Packages projects/sample/ProjectSettings projects/test/ 
+
+
+# opens project from cli
+bob@desktop:~/isaac_sim_unity3d$ ~/Unity/Hub/Editor/2019.3.0f6/Editor/Unity -projectPath projects/test -logfile /dev/stdout/
+```
+Opening up a scene in Build Mode will open up UnityEditor for you. If you prefer GUIs, you can open up Unity Hub (the appImage) and select projects from there itself.
+
+Now we can edit as we please. Please follow [this tutorial](https://docs.nvidia.com/isaac/isaac/doc/simulation/unity3d.html#create-a-new-project) to understand how to create scenes.
+
+When done, running that scene requires us to click the play button from the editor itself:
+![playButton](./assets/screenshots/playButton.png)
+
+
+Scenes vs Scenarios: TODO
+
+
 
 ## D: Codelets and Apps
 
