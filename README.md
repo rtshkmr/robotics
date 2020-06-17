@@ -185,6 +185,13 @@ Honestly, there's nothing good that's freely (and legally) available. Check out 
 #### MapsSDK
 
 #### EasyRoads3D
+EasyRoads3D is a plugin that provides an easy way to create roads in unity.
+
+1. Download and Import ``EasyRoads3D Free v3`` from the Unity Asset Store.
+2. Ensure you have a terrain game object. Else add a terrian game object ``GameObject -> 3D Object -> Terrain``
+3. Add the EasyRoads3D asset ``GameObject -> 3D Object -> EasyRoads3D -> New Road Network``
+4. Click on the Road Network Game Object created in the hierarchy. In the inspector on the right hand side, click the icon of road with a plus sign. Adjust parameters including road width and material.![](./readme_images/EasyRoads1.png)
+5. Click Add New Object. You can now shift-click on the terrain to add markers. ![](./readme_images/EasyRoads2.png)
 
 #### other smol stuff
 
