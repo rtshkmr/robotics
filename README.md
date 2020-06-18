@@ -333,7 +333,7 @@ Honestly, there's nothing good that's freely (and legally) available. Check out 
 You can check out this [site](https://www.hongkiat.com/blog/60-excellent-free-3d-model-websites/) for some open source models (only .fbx models can be imported into Unity3D).
 
 #### MapsSDK
-- Register for an account to be eligible for dwonloading the assets, there are no costs incurred.
+- Register for an account to be eligible for downloading the assets, there are no costs incurred.
 - Follow this [guide](https://docs.mapbox.com/unity/maps/overview/) to show you the steps for installation and a few tutorials on how to utilize the sdk.
 
 #### EasyRoads3D
@@ -347,10 +347,10 @@ EasyRoads3D is a plugin that provides an easy way to create roads in unity.
 
 #### Other Assets that we used:
 
-- NatureStarterKit2 (for greenery)
+- NatureStarterKit2 (Greenery)
 - PlayGround Pack (Low-poly 3D playground model) 
 - Windridge City Assets 
-- Prototyping Pack (for stairs and ramps)
+- Prototyping Pack (Stairs and ramps)
 
 ## F: Todos
 
