@@ -356,7 +356,7 @@ EasyRoads3D is a plugin that provides an easy way to create roads in unity.
 
 * [Establishing a ROS Bridge](https://docs.nvidia.com/isaac/isaac/packages/ros_bridge/doc/ros_bridge.html)
 
-* [map creation in unity](https://docs.mapbox.com/help/tutorials/create-a-map-in-unity/)
+* [Map creation in unity](https://docs.mapbox.com/help/tutorials/create-a-map-in-unity/)
 
 * [NVIDIA Omniverse](https://developer.nvidia.com/nvidia-omniverse-platform)
 
