@@ -51,6 +51,12 @@ the following are versions that we have tested with successfully:
 * Cuda: 10.0
 
 
+***Recommended Versions to stick to:*** 
+UnityEditor     : 2019.3.1
+IsaacSDK        : 2020.1
+Bazel Version   : 2.2.0
+Cuda            : 10.0
+
 
 ### [Isaac & Isaac Sim SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
 1. [Download](https://developer.nvidia.com/isaac/downloads) Isaac SDK 2020.1 and Isaac Sim (for Navigation) 2020.1, then extract the files to your home folder. (name them `~/isaac` and `~/isaac_sim_unity3d` respectively) Also, you will to make an NVIDIA account before you can proceed to download.
@@ -176,8 +182,9 @@ When done, running that scene requires us to click the play button from the edit
 ![playButton](./assets/screenshots/playButton.png)
 
 
-Scenes vs Scenarios: TODO
+***Scenes vs Scenarios: TODO***
 
+A scene can have multiple scenarios (e.g. having diff goals and poses) but we haven't really figured that out yet. 
 
 
 ## D: Codelets and Apps
@@ -349,3 +356,6 @@ EasyRoads3D is a plugin that provides an easy way to create roads in unity.
 
 * [NVIDIA Omniverse](https://developer.nvidia.com/nvidia-omniverse-platform)
 
+
+
+***Thank you, hope this helped!***
