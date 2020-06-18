@@ -45,16 +45,15 @@ our simulated objects. These should allow us to train and test our robots in a s
 ***Software Versions***:
 the following are versions that we have tested with successfully: 
 
-todo
-* UnityEditor Version: 
-* Isaac SDK:
-* Bazel Version:
-* Cuda:
+* UnityEditor Version: 2018.3.11, 2019.3.0, 2019.3.1
+* Isaac SDK: 2019.3, 2020.1
+* Bazel Version: 0.19.2, 2.0.0, 2.2.0
+* Cuda: 10.0
 
 
 
 ### [Isaac & Isaac Sim SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
-1. [Download](https://developer.nvidia.com/isaac/downloads) Isaac SDK 2020.1 and Isaac Sim (for Navigation) 2020.1, then extract the files to your home folder. (name them `~/isaac` and `~/isaac_sim_unity3d` respectively)
+1. [Download](https://developer.nvidia.com/isaac/downloads) Isaac SDK 2020.1 and Isaac Sim (for Navigation) 2020.1, then extract the files to your home folder. (name them `~/isaac` and `~/isaac_sim_unity3d` respectively) Also, you will to make an NVIDIA account before you can proceed to download.
 2. Ensure current version of NVIDIA GPU driver is version 440. To install, run the following commands in terminal
 
 ```bash
@@ -69,13 +68,13 @@ bob@desktop:~/isaac$ engine/build/scripts/install_dependencies.sh
 ```
 
 ### Simulation Environment: UnityHub and Unity 3D
-1. Download [UnityHub AppImage](https://unity3d.com/get-unity/download)
+1. Download [UnityHub AppImage](https://unity3d.com/get-unity/download). 
 2. Give the AppImage executable permissions. In terminal, navigate to the folder containing UnityHub.AppImage and run the following command.
    
 ``` 
 chmod +x UnityHub.AppImage
 ```
-1. To open UnityHub, run the executable in terminal
+3. To open UnityHub, run the executable in terminal
 ```
 ./UnityHub.AppImage
 ```
@@ -320,8 +319,11 @@ Blender is useful for this, but there's a learning curve. [Official Blender Fund
 #### Sources For Assets
 Honestly, there's nothing good that's freely (and legally) available. Check out the assets subdir in this repo for some assets, add to it if you can.
 
-#### MapsSDK
+You can check out this [site](https://www.hongkiat.com/blog/60-excellent-free-3d-model-websites/) for some open source models (only .fbx models can be imported into Unity3D).
 
+#### MapsSDK
+- Register for an account to be eligible for dwonloading the assets, there are no costs incurred.
+- Follow this [guide](https://docs.mapbox.com/unity/maps/overview/) to show you the steps for installation and a few tutorials on how to utilize the sdk.
 
 #### EasyRoads3D
 EasyRoads3D is a plugin that provides an easy way to create roads in unity.
@@ -332,7 +334,12 @@ EasyRoads3D is a plugin that provides an easy way to create roads in unity.
 4. Click on the Road Network Game Object created in the hierarchy. In the inspector on the right hand side, click the icon of road with a plus sign. Adjust parameters including road width and material.![](./readme_images/EasyRoads1.png)
 5. Click Add New Object. You can now shift-click on the terrain to add markers. ![](./readme_images/EasyRoads2.png)
 
-#### other smol stuff
+#### Other Assets that we used:
+
+- NatureStarterKit2 (for greenery)
+- PlayGround Pack (Low-poly 3D playground model) 
+- Windridge City Assets 
+- Prototyping Pack (for stairs and ramps)
 
 ## F: Todos
 
