@@ -41,8 +41,14 @@ our simulated objects. These should allow us to train and test our robots in a s
 * Ubuntu 18.04 LTS
 * GPU with [compute capability](https://developer.nvidia.com/cuda-gpus) of 3.5 or higher
 
+***Recommended Versions to stick to:*** 
+UnityEditor     : 2019.3.1
+IsaacSDK        : 2020.1
+Bazel Version   : 2.2.0
+Cuda            : 10.0
 
-***Software Versions***:
+
+***Software Versions we have tested on***:
 the following are versions that we have tested with successfully: 
 
 * UnityEditor Version: 2019.3.0, 2019.3.1, 2019.3.15
@@ -180,8 +186,9 @@ When done, running that scene requires us to click the play button from the edit
 ![playButton](./assets/screenshots/playButton.png)
 
 
-Scenes vs Scenarios: TODO
+***Scenes vs Scenarios: TODO***
 
+A scene can have multiple scenarios (e.g. having diff goals and poses) but we haven't really figured that out yet. 
 
 
 ## D: Codelets and Apps
@@ -353,3 +360,6 @@ EasyRoads3D is a plugin that provides an easy way to create roads in unity.
 
 * [NVIDIA Omniverse](https://developer.nvidia.com/nvidia-omniverse-platform)
 
+
+
+***Thank you, hope this helped!***
