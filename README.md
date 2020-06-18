@@ -83,6 +83,11 @@ chmod +x UnityHub.AppImage
 ./UnityHub.AppImage unityhub://2019.3.0f6/27ab2135bccf
 ```
 
+To install 2019.3.1f1 instead, run the following instead
+```
+./UnityHub.AppImage unityhub://2019.3.1f1/89d6087839c2
+```
+
 ### Troubleshooting Tips/Hacks
 - Unable to build isaac app
   - Bazel version has to be 2.x. To check, run the following command in terminal. Running the dependency script again should fix this.
