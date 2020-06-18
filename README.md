@@ -41,21 +41,20 @@ our simulated objects. These should allow us to train and test our robots in a s
 * Ubuntu 18.04 LTS
 * GPU with [compute capability](https://developer.nvidia.com/cuda-gpus) of 3.5 or higher
 
-
-***Software Versions***:
-the following are versions that we have tested with successfully: 
-
-* UnityEditor Version: 2018.3.11, 2019.3.0, 2019.3.1
-* Isaac SDK: 2019.3, 2020.1
-* Bazel Version: 0.19.2, 2.0.0, 2.2.0
-* Cuda: 10.0
-
-
 ***Recommended Versions to stick to:*** 
 UnityEditor     : 2019.3.1
 IsaacSDK        : 2020.1
 Bazel Version   : 2.2.0
 Cuda            : 10.0
+
+
+***Software Versions we have tested on***:
+the following are versions that we have tested with successfully: 
+
+* UnityEditor Version: 2019.3.0, 2019.3.1, 2019.3.15
+* Isaac SDK: 2020.1
+* Bazel Version: 0.19.2, 2.0.0, 2.2.0
+* Cuda: 10.0
 
 
 ### [Isaac & Isaac Sim SDK](https://docs.nvidia.com/isaac/isaac/doc/setup.html#setup-isaac)
