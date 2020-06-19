@@ -164,7 +164,7 @@ bob@desktop:~/isaac_sim_unity3d/builds$ ./sample.x86_64 --scene small_warehouse 
 
 ```bash
 # e.g. of UnityEditorVersion: 2019.3.0f6
-bob@desktop:~$: Unity/Hub/Editor/<UnityEditorVersion>/Editor/Unity -projectPath isaac_sim_unity3d/projects/sample -logfile 
+bob@desktop:~$: Unity/Hub/Editor/<UnityEditorVersion>/Editor/Unity -projectPath isaac_sim_unity3d/projects/sample -logfile /dev/stdout/
 ```
 
 ### 2. Editing 3D Scenes in Unity Editor
@@ -275,7 +275,7 @@ Isaac SDK includes the freespace_dnn package that makes it easy to train a free 
 #### Training the model in simulation
 
 1. Launch tensorflow instance and train it with labelled images received over TCP
-  ``bob@desktop:~/isaac$ bazel run packages/freespace_dnn/apps:freespace_dnn_training``
+  ```bob@desktop:~/isaac$ bazel run packages/freespace_dnn/apps:freespace_dnn_training```
 2. Run scenario 3 of medium warehouse scene by running the following command
   ```bash
   bob@desktop:~/isaac_sim_unity3d$ cd builds
