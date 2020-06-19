@@ -279,7 +279,9 @@ Isaac SDK includes the freespace_dnn package that makes it easy to train a free 
   bob@desktop:~/isaac_sim_unity3d/builds$ ./sample.x86_64 --scene medium_warehouse --scenario 3
   ```
 3. Press "C" key to disable the main camera, increasing simulation framerate. Logs and checkpoints are saved in ``/tmp/path_segmentation`` by default
+4. Open Isaac Sight at [http://localhost:3000/](http://localhost:3000/)
 4. To view training progress on Tensorboard ``tensorboard --logdir=/tmp/path_segmentation``
+6. Open Tensorboard at [http://localhost:6006/](http://localhost:6006/)
 5. Once the training is complete, serialize the most recent checkpoint as a protobuf file with ``bob@desktop:~/isaac$ python3 packages/freespace_dnn/apps/freespace_dnn_training_freeze_model.py --checkpoint_dir /tmp/path_segmentation --output_nodename prediction/truediv --output_filename model.pb --output_onnx_filename model.onnx``
 6. Using the model.onnx file that is generated, create a config file that looks like the packages/freespace_dnn/apps/freespace_dnn_inference_medium_warehouse_tensorrt.config.json file. You are now ready to perform inference.
 
