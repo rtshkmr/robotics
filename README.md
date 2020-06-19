@@ -1,4 +1,4 @@
-last updated Tue Jun 16 11:42:36 +08 2020
+last updated Fri Jun 19 14:59:23 +08 2020
 
 # Simulation for Robotics
 Summer 2020 ARC simulations for Nvidia's isaac_sdk. This document serves as a basic installation/quickstart guide.
@@ -7,26 +7,29 @@ The relevant commands have been extracted out, please follow the links provided 
 ![laikago](./assets/screenshots/lol.jpg)
 
 - [Simulation for Robotics](#simulation-for-robotics)
-  - [Motivation](#motivation)
-    - [System Requirements](#system-requirements-and-software-versions-tested)
+    - [Motivation](#motivation)
+    - [System Requirements and Software Versions Tested](#system-requirements-and-software-versions-tested)
     - [Isaac & Isaac Sim SDK](#isaac--isaac-sim-sdk)
     - [Simulation Environment: UnityHub and Unity 3D](#simulation-environment-unityhub-and-unity-3d)
     - [Troubleshooting Tips/Hacks](#troubleshooting-tipshacks)
+      - [Others](#others)
   - [B: Testing Your Setup](#b-testing-your-setup)
   - [C: Basic Workflow](#c-basic-workflow)
     - [1. Running Scenes in Play/Build Mode](#1-running-scenes-in-playbuild-mode)
     - [2. Editing 3D Scenes in Unity Editor](#2-editing-3d-scenes-in-unity-editor)
   - [D: Codelets and Apps](#d-codelets-and-apps)
     - [IsaacSight Related](#isaacsight-related)
-    - [Setting up Virtual Gamepad](#setting-up-virtual-gamepad)
-    - [Segmentation Training](#segmentation-training)
+    - [Setting up Virtual Gamepad - Controlling Carter using](#setting-up-virtual-gamepad---controlling-carter-using)
+    - [Free Space Segmentation](#free-space-segmentation)
+      - [Training the model in simulation](#training-the-model-in-simulation)
+      - [Inference](#inference)
   - [E: Collaboration Tools](#e-collaboration-tools)
     - [Unity's Collaboration  Features](#unitys-collaboration-features)
     - [Making/Modifying Assets](#makingmodifying-assets)
       - [Sources For Assets](#sources-for-assets)
       - [MapsSDK](#mapssdk)
       - [EasyRoads3D](#easyroads3d)
-      - [other smol stuff](#other-smol-stuff)
+      - [Other Assets that we used:](#other-assets-that-we-used)
   - [F: Todos](#f-todos)
 
 
