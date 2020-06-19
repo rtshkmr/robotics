@@ -279,11 +279,9 @@ Isaac SDK includes the freespace_dnn package that makes it easy to train a free 
   bob@desktop:~/isaac_sim_unity3d/builds$ ./sample.x86_64 --scene medium_warehouse --scenario 3
   ```
 3. Press "C" key to disable the main camera, increasing simulation framerate. Logs and checkpoints are saved in ``/tmp/path_segmentation`` by default
-4. Open Isaac Sight Interface at [http://localhost:3000/](http://localhost:3000/)
-5. To view training progress on Tensorboard ``tensorboard --logdir=/tmp/path_segmentation``
-6. Open tensorboard at [http://localhost:6006/](http://localhost:6006/)
-7. Once the training is complete, serialize the most recent checkpoint as a protobuf file with ``bob@desktop:~/isaac$ python3 packages/freespace_dnn/apps/freespace_dnn_training_freeze_model.py --checkpoint_dir /tmp/path_segmentation --output_nodename prediction/truediv --output_filename model.pb --output_onnx_filename model.onnx``
-8. Using the model.onnx file that is generated, create a config file that looks like the packages/freespace_dnn/apps/freespace_dnn_inference_medium_warehouse_tensorrt.config.json file. You are now ready to perform inference.
+4. To view training progress on Tensorboard ``tensorboard --logdir=/tmp/path_segmentation``
+5. Once the training is complete, serialize the most recent checkpoint as a protobuf file with ``bob@desktop:~/isaac$ python3 packages/freespace_dnn/apps/freespace_dnn_training_freeze_model.py --checkpoint_dir /tmp/path_segmentation --output_nodename prediction/truediv --output_filename model.pb --output_onnx_filename model.onnx``
+6. Using the model.onnx file that is generated, create a config file that looks like the packages/freespace_dnn/apps/freespace_dnn_inference_medium_warehouse_tensorrt.config.json file. You are now ready to perform inference.
 
 #### Inference
 
@@ -336,7 +334,8 @@ You can check out this [site](https://www.hongkiat.com/blog/60-excellent-free-3d
 
 #### MapsSDK
 - Register for an account to be eligible for downloading the assets, there are no costs incurred.
-- Follow this [guide](https://docs.mapbox.com/unity/maps/overview/) to show you the steps for installation and a few tutorials on how to utilize the sdk.
+- Follow this [guide](https://docs.mapbox.com/unity/maps/overview/) to show you the steps for installation.
+- A few tutorials on utilizing the sdk can be found [here](https://docs.mapbox.com/help/tutorials/create-a-map-in-unity/).
 
 #### EasyRoads3D
 EasyRoads3D is a plugin that provides an easy way to create roads in unity.
@@ -358,9 +357,9 @@ EasyRoads3D is a plugin that provides an easy way to create roads in unity.
 
 * [Establishing a ROS Bridge](https://docs.nvidia.com/isaac/isaac/packages/ros_bridge/doc/ros_bridge.html)
 
-* [Map creation in unity](https://docs.mapbox.com/help/tutorials/create-a-map-in-unity/)
-
 * [NVIDIA Omniverse](https://developer.nvidia.com/nvidia-omniverse-platform)
+
+* [Laikago Asset](https://github.com/nvidia-isaac/laikago_lidar_mount)
 
 
 
