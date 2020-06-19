@@ -8,7 +8,7 @@ The relevant commands have been extracted out, please follow the links provided 
 
 - [Simulation for Robotics](#simulation-for-robotics)
   - [Motivation](#motivation)
-    - [System Requirements](#system-requirements)
+    - [System Requirements](#system-requirements-and-software-versions-tested)
     - [Isaac & Isaac Sim SDK](#isaac--isaac-sim-sdk)
     - [Simulation Environment: UnityHub and Unity 3D](#simulation-environment-unityhub-and-unity-3d)
     - [Troubleshooting Tips/Hacks](#troubleshooting-tipshacks)
@@ -53,7 +53,7 @@ the following are versions that we have tested with successfully:
 
 * UnityEditor Version: 2019.3.0, 2019.3.1, 2019.3.15
 * Isaac SDK: 2020.1
-* Bazel Version: 0.19.2, 2.0.0, 2.2.0
+* Bazel Version: 2.0.0, 2.2.0
 * Cuda: 10.0
 
 
