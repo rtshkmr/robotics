@@ -1,5 +1,3 @@
-last updated Fri Jun 19 14:59:23 +08 2020
-
 # Simulation for Robotics
 Summer 2020 ARC simulations for Nvidia's isaac_sdk. This document serves as a basic installation/quickstart guide.
 The relevant commands have been extracted out, please follow the links provided for further reading if required.
